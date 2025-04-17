@@ -292,7 +292,7 @@ const Portfolio = () => {
 
       {/* Main Content */}
       <main className="main">
-        <div className="container">
+        <div>
           {/* About Section */}
           {activeSection === "about" && (
             <section id="about">
