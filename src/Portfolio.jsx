@@ -17,6 +17,7 @@ const Portfolio = () => {
 
   const skills = {
     languages: [
+      "Go",
       "Java (Core, EE)",
       "Python",
       "JavaScript",
@@ -304,8 +305,8 @@ const Portfolio = () => {
                 <p className="text-lg">
                   I'm a results-driven Software Engineer with 5+ years of
                   experience architecting and implementing scalable
-                  applications. I specialize in backend development with Java
-                  and Spring Boot, creating high-performance systems and RESTful
+                  applications. I specialize in backend development with a couple
+                  of frameworks, creating high-performance systems and RESTful
                   APIs.
                 </p>
                 <p className="text-lg">
@@ -332,7 +333,7 @@ const Portfolio = () => {
                     </li>
                     <li>
                       <ChevronRight className="text-blue" size={20} />
-                      <span>Specialized in Java backend development</span>
+                      <span>Specialized in backend development</span>
                     </li>
                     <li>
                       <ChevronRight className="text-blue" size={20} />
