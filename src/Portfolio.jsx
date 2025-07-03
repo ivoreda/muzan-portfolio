@@ -305,8 +305,8 @@ const Portfolio = () => {
                 <p className="text-lg">
                   I'm a results-driven Software Engineer with 5+ years of
                   experience architecting and implementing scalable
-                  applications. I specialize in backend development with a couple
-                  of frameworks, creating high-performance systems and RESTful
+                  applications. I specialize in backend development with modern
+                  frameworks, creating high-performance systems and RESTful
                   APIs.
                 </p>
                 <p className="text-lg">
