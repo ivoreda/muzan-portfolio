@@ -24,6 +24,7 @@ const Portfolio = () => {
       "TypeScript",
       "C#",
       "Solidity",
+      "PHP",
     ],
     frameworks: [
       "Spring",
@@ -36,6 +37,7 @@ const Portfolio = () => {
       "React",
       "React Native",
       ".NET",
+      "Laravel",
     ],
     databases: ["PostgreSQL", "MySQL", "MongoDB", "Prisma", "Hibernate/JPA"],
     devops: ["Git", "GitHub Actions", "Docker", "AWS EC2"],
