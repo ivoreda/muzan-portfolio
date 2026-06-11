@@ -23,8 +23,11 @@ const Portfolio = () => {
       "JavaScript",
       "TypeScript",
       "C#",
+      "C",
+      "C++",
       "Solidity",
       "PHP",
+      "Rust"
     ],
     frameworks: [
       "Spring",
@@ -54,10 +57,22 @@ const Portfolio = () => {
 
   const experiences = [
     {
+      company: "Enyata",
+      location: "Lagos",
+      position: "Senior Software Engineer",
+      period: "Nov 2025 - Present",
+      achievements: [
+        "Established engineering best practices, including code review processes, testing protocols, and deployment automation, achieving 99.9% system uptime",
+        "Led a team of engineers across frontend and backend implementing agile methodologies and reducing development cycle time by 40%",
+        "Defined and executed technical roadmap, implementing RESTful APIs and microservices architecture to support rapid product iteration",
+        "Architected and implemented a scalable microservices-based platform, significantly enhancing user engagement and driving a substantial growth in monthly active users",
+      ],
+    },
+    {
       company: "SafeGarage",
       location: "Lagos",
       position: "Co-Founder & Chief Technology Officer",
-      period: "Apr 2024 - Present",
+      period: "Apr 2024 - Nov 2025",
       achievements: [
         "Established engineering best practices, including code review processes, testing protocols, and deployment automation, achieving 99.9% system uptime",
         "Led a team of engineers across frontend and backend implementing agile methodologies and reducing development cycle time by 40%",
@@ -69,7 +84,7 @@ const Portfolio = () => {
       company: "7thCare",
       location: "Wuse II, Abuja",
       position: "Senior Backend Developer",
-      period: "May 2024 - Present",
+      period: "May 2024 - Nov 2025",
       achievements: [
         "Designed and implemented high-performance server-side architecture handling 100,000+ daily API requests",
         "Successfully lead the team to build and scale the V2 of 7thCare HybridCare platform",
@@ -81,7 +96,7 @@ const Portfolio = () => {
       company: "RegXta",
       location: "Apapa, Lagos",
       position: "Senior Backend Developer",
-      period: "Nov 2023 - Present",
+      period: "June 2021 - May 2024",
       achievements: [
         "Designed and developed highly scalable and performant RESTful APIs capable of handling 100,000+ daily requests",
         "Implemented performance optimizations resulting in a 20% reduction API response times",
@@ -99,17 +114,6 @@ const Portfolio = () => {
         "Managed 5-person development team, reducing project delivery time by 35%",
         "Implemented automated testing suite achieving 90% code coverage",
         "Optimized database performance, reducing query response times by 45%",
-      ],
-    },
-    {
-      company: "TheSociaLiga",
-      location: "Victoria Island, Lagos",
-      position: "Backend Developer",
-      period: "Feb 2022 - Feb 2023",
-      achievements: [
-        "Managed full lifecycle development for ~5 backend feature releases, resulting in at least a 35% reduction in downtime",
-        "Optimized databases to improve performance by at least 40% and decrease retrieval time of complex queries by 50%",
-        "Played a pivotal role in ensuring that projects remained aligned with the company's strategic vision and objectives",
       ],
     },
   ];
