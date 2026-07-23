@@ -15,6 +15,7 @@ import {
   initExperienceReveals,
   initFloatingIcons,
   initHeroAnimations,
+  initProjectsHorizontalScroll,
   initScrollReveals,
   initSkillStack,
   initStackRibbon,
@@ -280,6 +281,7 @@ const Portfolio = () => {
       initStackRibbon();
       initFloatingIcons();
       initExperienceReveals();
+      initProjectsHorizontalScroll();
     }, rootRef.current);
 
     return () => context.revert();
