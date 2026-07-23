@@ -168,11 +168,6 @@ export const initProjectsHorizontalScroll = () => {
   }
 
   const getTravel = () => Math.max(0, track.scrollWidth - wrap.clientWidth);
-
-  if (getTravel() === 0) {
-    return;
-  }
-
   const cardCount = track.querySelectorAll(".project-horizontal-card").length;
 
   gsap.to(track, {
@@ -180,8 +175,14 @@ export const initProjectsHorizontalScroll = () => {
     ease: "none",
     scrollTrigger: {
       trigger: stage,
-      start: "top top",
-      end: () => `+=${Math.max((cardCount - 1) * window.innerHeight * 0.9, getTravel())}`,
+      start: "top 84px",
+      end: () => {
+        const travel = getTravel();
+        if (travel === 0) {
+          return "+=0";
+        }
+        return `+=${Math.max((cardCount - 1) * window.innerHeight * 0.9, travel)}`;
+      },
       pin: true,
       scrub: true,
       anticipatePin: 1,
