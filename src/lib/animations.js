@@ -158,6 +158,38 @@ export const initExperienceReveals = () => {
   });
 };
 
+export const initProjectsHorizontalScroll = () => {
+  const stage = document.querySelector(".projects-pin-stage");
+  const wrap = document.querySelector(".projects-horizontal-wrap");
+  const track = document.querySelector(".projects-horizontal-track");
+
+  if (!stage || !wrap || !track) {
+    return;
+  }
+
+  const getTravel = () => Math.max(0, track.scrollWidth - wrap.clientWidth);
+
+  if (getTravel() === 0) {
+    return;
+  }
+
+  const cardCount = track.querySelectorAll(".project-horizontal-card").length;
+
+  gsap.to(track, {
+    x: () => -getTravel(),
+    ease: "none",
+    scrollTrigger: {
+      trigger: stage,
+      start: "top top",
+      end: () => `+=${Math.max((cardCount - 1) * window.innerHeight * 0.9, getTravel())}`,
+      pin: true,
+      scrub: true,
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
+    },
+  });
+};
+
 export const disableMotion = () => {
   ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
   gsap.globalTimeline.clear();
