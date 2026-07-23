@@ -210,9 +210,9 @@ const navItems = [
 ];
 
 const metrics = [
-  { value: "5+", label: "years building production systems" },
+  { value: "7+", label: "years building production systems" },
   { value: "100k+", label: "daily API requests handled" },
-  { value: "99.9%", label: "system uptime achieved" },
+  { value: "99%", label: "system uptime achieved" },
   { value: "40%", label: "faster delivery cycles led" },
 ];
 
