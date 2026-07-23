@@ -203,11 +203,12 @@ const certifications = [
 const navItems = [
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
-  { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
+  { id: "experience", label: "Experience" },
   { id: "education", label: "Education" },
   { id: "contact", label: "Contact" },
 ];
+
 
 const metrics = [
   { value: "7+", label: "years building production systems" },

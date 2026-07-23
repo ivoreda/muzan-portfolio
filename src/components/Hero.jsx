@@ -7,16 +7,16 @@ const Hero = () => (
   <section className="hero" id="top">
     <Container className="hero-grid">
       <div className="hero-copy-block">
-        <p className="hero-kicker" data-reveal>Senior Backend Developer</p>
+        <p className="hero-kicker">Senior Backend Developer</p>
         <h1 className="hero-title">
           Reliable backend systems for ambitious products.
         </h1>
-        <p className="hero-copy" data-reveal>
+        <p className="hero-copy">
           I design APIs, microservices, databases, infrastructure, and backend
           platforms that are scalable, observable, and built for real production
           use.
         </p>
-        <div className="hero-actions" data-reveal>
+        <div className="hero-actions">
           <a className="btn btn-primary" href="#projects">
             View Projects
           </a>
@@ -34,7 +34,7 @@ const Hero = () => (
             <Github size={19} />
           </a>
         </div>
-        <div className="hero-stack-labels hero-stack-inline" data-stagger>
+        <div className="hero-stack-labels hero-stack-inline">
           {heroStack.map((item) => (
             <span key={item}>{item}</span>
           ))}

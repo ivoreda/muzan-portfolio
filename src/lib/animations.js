@@ -4,22 +4,30 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export const initHeroAnimations = () => {
-  gsap
-    .timeline({ defaults: { ease: "power4.out" } })
-    .from(".nav", { y: -28, opacity: 0, duration: 0.8 })
-    .from(".hero-title", { y: 60, opacity: 0, duration: 1 }, "-=0.35")
-    .from(".hero-copy, .hero-kicker, .hero-actions", {
-      y: 34,
-      opacity: 0,
-      duration: 0.75,
-      stagger: 0.1,
-    }, "-=0.55")
+  gsap.from(".nav", { y: -28, opacity: 0, duration: 0.8, ease: "power4.out" });
+
+  const heroReveal = gsap
+    .timeline({ paused: true, defaults: { ease: "power4.out" } })
+    .from(".hero-kicker", { y: 34, opacity: 0, duration: 0.6 })
+    .from(".hero-title", { y: 60, opacity: 0, duration: 0.9 }, "-=0.25")
+    .from(".hero-copy", { y: 34, opacity: 0, duration: 0.6 }, "-=0.35")
+    .from(".hero-actions", { y: 34, opacity: 0, duration: 0.6 }, "-=0.25")
     .from(".hero-stack-labels span", {
       y: 20,
       opacity: 0,
-      duration: 0.55,
+      duration: 0.5,
       stagger: 0.08,
-    }, "-=0.45");
+    }, "-=0.2");
+
+  heroReveal.play();
+
+  ScrollTrigger.create({
+    trigger: ".hero",
+    start: "top top",
+    end: "bottom top",
+    onLeave: () => heroReveal.reverse(),
+    onEnterBack: () => heroReveal.play(),
+  });
 };
 
 export const initScrollReveals = () => {
@@ -167,28 +175,35 @@ export const initProjectsHorizontalScroll = () => {
     return;
   }
 
-  const getTravel = () => Math.max(0, track.scrollWidth - wrap.clientWidth);
+  const getVisibleWidth = () => {
+    const wrapStyle = getComputedStyle(wrap);
+    const paddingLeft = parseFloat(wrapStyle.paddingLeft) || 0;
+    const paddingRight = parseFloat(wrapStyle.paddingRight) || 0;
+    return wrap.clientWidth - paddingLeft - paddingRight;
+  };
+  const getTravel = () => Math.max(0, track.scrollWidth - getVisibleWidth());
   const cardCount = track.querySelectorAll(".project-horizontal-card").length;
 
-  gsap.to(track, {
-    x: () => -getTravel(),
-    ease: "none",
-    scrollTrigger: {
-      trigger: stage,
-      start: "top 84px",
-      end: () => {
-        const travel = getTravel();
-        if (travel === 0) {
-          return "+=0";
-        }
-        return `+=${Math.max((cardCount - 1) * window.innerHeight * 0.9, travel)}`;
-      },
-      pin: true,
-      scrub: true,
-      anticipatePin: 1,
-      invalidateOnRefresh: true,
+  ScrollTrigger.create({
+    trigger: stage,
+    start: "top 84px",
+    end: () => {
+      const travel = getTravel();
+      if (travel === 0) {
+        return "+=0";
+      }
+      return `+=${Math.max((cardCount - 1) * window.innerHeight * 0.9, travel)}`;
+    },
+    pin: true,
+    scrub: true,
+    anticipatePin: 1,
+    invalidateOnRefresh: true,
+    onUpdate: (self) => {
+      gsap.set(track, { x: -getTravel() * self.progress });
     },
   });
+
+  window.addEventListener("load", () => ScrollTrigger.refresh());
 };
 
 export const disableMotion = () => {
